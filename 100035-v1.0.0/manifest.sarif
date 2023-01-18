@@ -1,0 +1,166 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "properties": {
+        "id": 100035,
+        "version": "1.0.0",
+        "type": "source code",
+        "status": "accepted",
+        "submissionDate": "2013-05-21",
+        "language": "cplusplus",
+        "author": "NSA/Center for Assured Software",
+        "description": "CWE: 401 Memory Leak\n BadSource:  Allocate data using new[]\n GoodSource: Point data to a stack buffer\n Sinks:\n GoodSink: call delete[] on data\n BadSink : no deallocation of data\n Flow Variant: 82 Data flow: data passed in a parameter to an virtual method called via a pointer",
+        "state": "mixed"
+      },
+      "tool": {
+        "driver": {
+          "name": "SARD - SAMATE",
+          "fullName": "Software Assurance Reference Dataset Project",
+          "informationUri": "https://samate.nist.gov/SARD/",
+          "version": "5.0.0",
+          "organization": "NIST",
+          "supportedTaxonomies": [
+            {
+              "name": "CWE",
+              "index": 0
+            }
+          ]
+        }
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/testcases/CWE401_Memory_Leak/s02/CWE401_Memory_Leak__new_array_twointsStruct_82.h"
+          },
+          "length": 1473,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "b54ce655c07ea70a1b353ed8be83493bf79d3126555ffa8557291d96227c68ad"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/testcases/CWE401_Memory_Leak/s02/CWE401_Memory_Leak__new_array_twointsStruct_82_bad.cpp"
+          },
+          "length": 947,
+          "sourceLanguage": "cplusplus",
+          "hashes": {
+            "sha-256": "c1134cb2d529ae72fa08b94cccd99419e5994907fa616629c46e75ea0f88c774"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/testcases/CWE401_Memory_Leak/s02/CWE401_Memory_Leak__new_array_twointsStruct_82_goodB2G.cpp"
+          },
+          "length": 913,
+          "sourceLanguage": "cplusplus",
+          "hashes": {
+            "sha-256": "b0ff83b61ad846aa833f0275a677fd062c4bbf0db9de32f4aa796bf068090381"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/testcases/CWE401_Memory_Leak/s02/CWE401_Memory_Leak__new_array_twointsStruct_82_goodG2B.cpp"
+          },
+          "length": 961,
+          "sourceLanguage": "cplusplus",
+          "hashes": {
+            "sha-256": "58f6bb85cb5e3d12600c4afcb16a9045819eebd90dc958ff88b64974096cfc1a"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/testcases/CWE401_Memory_Leak/s02/CWE401_Memory_Leak__new_array_twointsStruct_82a.cpp"
+          },
+          "length": 3225,
+          "sourceLanguage": "cplusplus",
+          "hashes": {
+            "sha-256": "4790a88742f23cbb486e7cf6f3f4f50788aeefaf6ded8601abbb9cd30bbbd81c"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/testcasesupport/io.c"
+          },
+          "length": 5429,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "50ace91d0f9cd9f281d5d8ff3a9ca879ee2779d737030ae84e8e4be3df5b299c"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/testcasesupport/std_testcase.h"
+          },
+          "length": 4004,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "a78aaf3a54a6210260ad70123c09c3c283c6edf7808b6244205e00b8f2d9b8d0"
+          }
+        },
+        {
+          "location": {
+            "uri": "src/testcasesupport/std_testcase_io.h"
+          },
+          "length": 1457,
+          "sourceLanguage": "c",
+          "hashes": {
+            "sha-256": "6459df50d22697bb61619e2effd688ebb98915db25f7eb1bdbb767f888066fb6"
+          }
+        }
+      ],
+      "taxonomies": [
+        {
+          "name": "CWE",
+          "version": "4.6",
+          "informationUri": "https://cwe.mitre.org/data/published/cwe_v4.6.pdf",
+          "downloadUri": "https://cwe.mitre.org/data/xml/cwec_v4.6.xml.zip",
+          "organization": "MITRE",
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration"
+          },
+          "isComprehensive": false,
+          "taxa": [
+            {
+              "id": "401",
+              "name": "Missing Release of Memory after Effective Lifetime"
+            }
+          ]
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "CWE-401",
+          "message": {
+            "text": "Missing Release of Memory after Effective Lifetime."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/testcases/CWE401_Memory_Leak/s02/CWE401_Memory_Leak__new_array_twointsStruct_82_bad.cpp",
+                  "index": 1
+                },
+                "region": {
+                  "startLine": 27
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "toolComponent": {
+                "name": "CWE",
+                "index": 0
+              },
+              "id": "401",
+              "index": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
